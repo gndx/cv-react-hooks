@@ -26,12 +26,12 @@ module.exports = {
             loader: "html-loader"
           }
         ]
-      }
+      },
     ]
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: "./src/index.html",
+      template: "./public/index.html",
       filename: "./index.html"
     })
   ]
