@@ -4,17 +4,29 @@ import styled, { keyframes } from 'styled-components';
 const spin = keyframes`
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
-`
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8em 0px;
+`;
 
 const Load = styled.div`
-  border: 4px solid #f3f3f3;
-  border-top: 4px solid #3498db;
+  border: 6px solid #282a36;
+  border-top: 6px solid #337AB8;
   border-radius: 50%;
   width: 36px;
-  height: 35px;
+  height: 36px;
   animation: ${spin} 2s linear infinite;
-`
+`;
 
-const Loader = () => <Load />
+const Loader = () => (
+  <Wrapper>
+    <Load />
+  </Wrapper>
+);
+
 
 export default Loader;
