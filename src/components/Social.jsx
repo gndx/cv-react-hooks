@@ -7,7 +7,7 @@ const Social = props => (
         {props.social.map((item, index) =>
           <li key={`social-${index}`}>
             <a href={item.url} target='_blank'>
-              {item.name}
+              <i className={`fa fa-${item.name}`} />
             </a>
           </li>
         )}
@@ -16,5 +16,5 @@ const Social = props => (
   </div>
 );
 
-
 export default Social;
+
