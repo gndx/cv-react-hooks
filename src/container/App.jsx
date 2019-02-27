@@ -1,4 +1,5 @@
 import React from 'react';
+import { createGlobalStyle } from "styled-components";
 import getData from '../hooks/getData';
 import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
@@ -11,10 +12,20 @@ import Skills from '../components/Skills';
 import Loader from '../components/Loader';
 const API = 'https://us-central1-gndx-cv.cloudfunctions.net/me';
 
+
+const GlobalStyle = createGlobalStyle`
+  body {
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+  }
+`;
+
 const App = () => {
   const data = getData(API);
-  return data.length === 0 ? <Loader /> : (
+  return data.length === 0 ? <><GlobalStyle /><Loader /></> : (
     <Main>
+      <GlobalStyle />
       <Sidebar>
         <About
           avatar={data.avatar}
