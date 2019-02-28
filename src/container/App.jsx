@@ -1,5 +1,5 @@
 import React from 'react';
-import getData from '../hooks/getData';
+import useData from '../hooks/useData';
 import Main from '../components/Main';
 import Sidebar from '../components/Sidebar';
 import Info from '../components/Info';
@@ -12,7 +12,7 @@ import Loader from '../components/Loader';
 const API = 'https://us-central1-gndx-cv.cloudfunctions.net/me';
 
 const App = () => {
-  const data = getData(API);
+  const data = useData(API);
   return data.length === 0 ? <Loader /> : (
     <Main>
       <Sidebar>
